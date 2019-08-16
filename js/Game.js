@@ -19,6 +19,10 @@ class Game {
             );
         }
     }
+
+    startGame(){
+        
+    }
 }
 
 export default Game;

@@ -19,6 +19,14 @@ class Board {
             }
         }
     }
+
+    drawHTMLBoard() {
+        for (let i in this.spaces()) {
+            for (let j in i) {
+                this.spaces.drawSvgSpace();
+            }
+        }
+    }
 }
 
 export default Board;
