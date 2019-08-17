@@ -1,11 +1,28 @@
 import Token from './Token';
 
 class Player {
-    constructor(name, color, isPlayerOne = false, hasTurn = false) {
+    constructor(name, color, isPlayerOne = false) {
         this.isPlayerOne = isPlayerOne;
         this.name = name;
         this.color = color;
-        this.token = this.createTokens(21);
+        this.tokens = this.createTokens(21);
+        this.hasTurn = false;
+    }
+
+    /*
+     * Go through the list of all created tokens and filter out any token that has been dropped
+     * @returns {array} 
+     */
+    get unusedTokens() {
+        return this.tokens.filter(t => !t.dropped);
+    }
+
+    /*
+     * Get the first token of the non-used list
+     * @return{Token}
+     */
+    get activeToken() {
+        return this.unusedTokens[0];
     }
 
     /**

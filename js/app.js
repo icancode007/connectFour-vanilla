@@ -10,4 +10,11 @@ document.getElementById('begin-game')
         game.startGame();
         this.style.display = 'none';
         document.getElementById( 'play-area' ).style.opacity = '1';
-    })
+});
+
+/** 
+ * Listens for Key Presses
+ */
+document.addEventListener('keydown', event => {
+    game.handleKeydown(event);
+});
